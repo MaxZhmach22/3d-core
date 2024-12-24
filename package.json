@@ -1,0 +1,29 @@
+{
+  "name": "3d-core",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/3d-core-lib.umd.cjs",
+  "module": "./dist/3d-core-lib.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/3d-core-lib.js",
+      "require": "./dist/3d-core-lib.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.0.0",
+    "vite": "^6.0.3",
+    "vite-plugin-dts": "^4.4.0"
+  }
+}
