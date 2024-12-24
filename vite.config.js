@@ -8,7 +8,15 @@ export default defineConfig({
             entry: resolve(__dirname, 'src/main.ts'),
             name: '3d-core-lib',
             fileName: '3d-core-lib'
-        }
+        },
+        rollupOptions: {
+            external: ['three'],
+            output: {
+                globals: {
+                    three: 'THREE',
+                },
+            },
+        },
     },
     plugins: [dts()],
     server: {

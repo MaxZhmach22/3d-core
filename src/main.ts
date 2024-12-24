@@ -1,9 +1,10 @@
 import type {ICoreUpdate} from "./core/interfaces/ICoreUpdate.ts";
+import {Vector3} from "three";
 
 export class GameInitializer implements ICoreUpdate
 {
     public init(): void {
-        console.log('Game initialized')
+        console.log('Game initialized', new Vector3(1, 2, 3))
     }
 
     public update(): void {
