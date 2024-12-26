@@ -9,7 +9,8 @@
   "exports": {
     ".": {
       "import": "./dist/3d-core-lib.js",
-      "require": "./dist/3d-core-lib.umd.cjs"
+      "require": "./dist/3d-core-lib.umd.cjs",
+      "types": "./dist/main.d.ts"
     }
   },
   "files": [
