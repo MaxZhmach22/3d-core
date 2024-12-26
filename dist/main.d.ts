@@ -1,11 +1,4 @@
-import { ICoreUpdate } from './core/interfaces/ICoreUpdate.ts';
-export declare class GameInitializer implements ICoreUpdate {
-    init(): void;
-    update(): void;
-}
-export declare const GAM: {
-    BackgroundOpt: symbol;
-    GyroScopeOpt: symbol;
-    GameInitializer: symbol;
-};
-export type { ICoreUpdate } from './core/interfaces/ICoreUpdate';
+export { buildBaseDIModule } from './core/InversifyBase';
+export type { IThreeJsBase } from './core/interfaces/base/IThreeJsBase';
+export type { IBaseOpt } from './core/interfaces/options/IBaseOpt';
+export { BASETYPES } from './core/config/BaseTypes';

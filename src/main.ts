@@ -1,21 +1,11 @@
-import type {ICoreUpdate} from "./core/interfaces/ICoreUpdate.ts";
-import {Vector3} from "three";
+// Base DI
+export { buildBaseDIModule } from './core/InversifyBase'
 
-export class GameInitializer implements ICoreUpdate
-{
-    public init(): void {
-        console.log('Game initialized', new Vector3(1, 2, 3))
-    }
+// base interfaces
+export type { IThreeJsBase } from './core/interfaces/base/IThreeJsBase'
 
-    public update(): void {
-        console.log('Game updated')
-    }
-}
+// options interfaces
+export type { IBaseOpt } from './core/interfaces/options/IBaseOpt'
 
-export const GAM = {
-    BackgroundOpt: Symbol.for('BackgroundOpt'),
-    GyroScopeOpt: Symbol.for('GyroScopeOpt'),
-    GameInitializer: Symbol.for('GameInitializer')
-}
-
-export type { ICoreUpdate} from "./core/interfaces/ICoreUpdate";
+// Base Types
+export { BASETYPES } from './core/config/BaseTypes'
