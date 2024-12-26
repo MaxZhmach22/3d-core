@@ -30,6 +30,8 @@
   },
   "peerDependencies": {
     "three": "^0.169.0",
-    "@types/three": "^0.169.0"
+    "@types/three": "^0.169.0",
+    "inversify": "^6.0.3",
+    "reflect-metadata": "^0.2.2"
   }
 }
