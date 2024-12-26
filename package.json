@@ -1,7 +1,7 @@
 {
   "name": "3d-core",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "./dist/3d-core-lib.umd.cjs",
   "module": "./dist/3d-core-lib.js",
