@@ -3,6 +3,7 @@ import {BASETYPES} from "./config/BaseTypes";
 import {IBaseOpt} from "./interfaces/options/IBaseOpt";
 import {ColorSpace, PerspectiveCamera, Scene, WebGLRenderer} from "three";
 import {IThreeJsBase} from "./interfaces/base/IThreeJsBase";
+import {ICommonDebugOpt} from "./interfaces/options/ICommonDebugOpt";
 
 /**
  * Build base DI module with base three.js objects and game settings from json file
@@ -16,7 +17,7 @@ export function buildBaseDIModule(canvas: HTMLCanvasElement, gameSettingsPath: s
         const baseOpt: IBaseOpt = gameConfig.baseOpt;
         bind<IBaseOpt>(BASETYPES.BaseOpt).toConstantValue(baseOpt);
 
-        const commonDebugOpt = gameConfig.commonDebugOpt;
+        const commonDebugOpt: ICommonDebugOpt = gameConfig.commonDebugOpt;
         bind(BASETYPES.CommonDebugOpt).toConstantValue(commonDebugOpt);
 
         const renderer = new WebGLRenderer({
