@@ -1,6 +1,9 @@
 // Base DI
 export { buildBaseDIModule } from './core/InversifyBase'
 
+// abstract classes
+export { BaseUpdateHandler } from './core/abstract/BaseUpdateHandler'
+
 // base interfaces
 export type { IThreeJsBase } from './core/interfaces/base/IThreeJsBase'
 export type { IUpdate } from './core/interfaces/base/IUpdate'
@@ -8,6 +11,7 @@ export type { IUpdateHandler } from './core/interfaces/base/IUpdateHandler'
 
 // options interfaces
 export type { IBaseOpt } from './core/interfaces/options/IBaseOpt'
+export type { ICommonDebugOpt } from './core/interfaces/options/ICommonDebugOpt'
 
 // Base Types
 export { BASETYPES } from './core/config/BaseTypes'
