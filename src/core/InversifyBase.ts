@@ -1,13 +1,17 @@
 import {AsyncContainerModule} from "inversify";
 import {BASETYPES} from "./config/BaseTypes";
 import {IBaseOpt} from "./interfaces/options/IBaseOpt";
-import {PerspectiveCamera, Scene, SRGBColorSpace, WebGLRenderer} from "three";
+import {ColorSpace, PerspectiveCamera, Scene, WebGLRenderer} from "three";
 import {IThreeJsBase} from "./interfaces/base/IThreeJsBase";
 
+/**
+ * Build base DI module with base three.js objects and game settings from json file
+ * @param canvas
+ * @param gameSettingsPath
+ */
 export function buildBaseDIModule(canvas: HTMLCanvasElement, gameSettingsPath: string = "./gameConfig.json"): AsyncContainerModule{
     return new AsyncContainerModule(async (bind) => {
         const gameConfig = await getData(gameSettingsPath);
-        console.log(gameConfig);
 
         const baseOpt: IBaseOpt = gameConfig.baseOpt;
         bind<IBaseOpt>(BASETYPES.BaseOpt).toConstantValue(baseOpt);
@@ -19,7 +23,7 @@ export function buildBaseDIModule(canvas: HTMLCanvasElement, gameSettingsPath: s
         })
 
         renderer.setSize(window.innerWidth, window.innerHeight)
-        renderer.outputColorSpace = SRGBColorSpace
+        renderer.outputColorSpace = baseOpt.colorSpace as ColorSpace
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
         const threeJsBase: IThreeJsBase = {

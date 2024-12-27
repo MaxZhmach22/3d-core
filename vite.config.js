@@ -10,10 +10,11 @@ export default defineConfig({
             fileName: '3d-core-lib'
         },
         rollupOptions: {
-            external: ['three'],
-            output: {
+            external: ['three', 'lil-gui'],
+            output:  {
                 globals: {
                     three: 'THREE',
+                    'lil-gui': 'GUI',
                 },
             },
         },

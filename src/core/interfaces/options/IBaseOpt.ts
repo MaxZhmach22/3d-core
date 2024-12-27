@@ -11,4 +11,5 @@ export interface IBaseOpt{
         }
     },
     antialias: boolean;
+    colorSpace: string;
 }

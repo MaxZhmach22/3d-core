@@ -1,6 +1,7 @@
 export const BASETYPES = {
     //Options
     BaseOpt: Symbol.for('BaseOpt'),
+    CommonDebugOpt: Symbol.for('CommonDebugOpt'),
     //Core
     ThreeJsBase: Symbol.for('ThreeJsBase'),
     LoadUpdateHandler: Symbol.for('LoadUpdateHandler'),
