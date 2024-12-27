@@ -16,6 +16,9 @@ export function buildBaseDIModule(canvas: HTMLCanvasElement, gameSettingsPath: s
         const baseOpt: IBaseOpt = gameConfig.baseOpt;
         bind<IBaseOpt>(BASETYPES.BaseOpt).toConstantValue(baseOpt);
 
+        const commonDebugOpt = gameConfig.commonDebugOpt;
+        bind(BASETYPES.CommonDebugOpt).toConstantValue(commonDebugOpt);
+
         const renderer = new WebGLRenderer({
             canvas: canvas,
             antialias: baseOpt.antialias,
