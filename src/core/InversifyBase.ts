@@ -18,7 +18,7 @@ export function buildBaseDIModule(canvas: HTMLCanvasElement, gameSettingsPath: s
         bind<IBaseOpt>(BASETYPES.BaseOpt).toConstantValue(baseOpt);
 
         const commonDebugOpt: ICommonDebugOpt = gameConfig.commonDebugOpt;
-        bind(BASETYPES.CommonDebugOpt).toConstantValue(commonDebugOpt);
+        bind<ICommonDebugOpt>(BASETYPES.CommonDebugOpt).toConstantValue(commonDebugOpt);
 
         const renderer = new WebGLRenderer({
             canvas: canvas,
