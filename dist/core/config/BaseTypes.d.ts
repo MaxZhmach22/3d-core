@@ -1,5 +1,6 @@
 export declare const BASETYPES: {
     BaseOpt: symbol;
+    CommonDebugOpt: symbol;
     ThreeJsBase: symbol;
     LoadUpdateHandler: symbol;
     UpdateHandler: symbol;
