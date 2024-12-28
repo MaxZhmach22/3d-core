@@ -1,24 +1,24 @@
 import { CompressedTexture, type WebGLRenderer } from 'three'
-import {ResourcesLoader} from "./resources-loader";
-import {ArchiveExtractor} from "./archive-extractor";
-import {ModelsResources} from "./models-resources";
-import {TexturesResources} from "./textures-resources";
+import {ThreeJSLoaderWrapper} from "./ThreeJSLoaderWrapper";
+import {ArchiveExtractor} from "./ArchiveExtractor";
+import {ModelsResources} from "./ModelsResources";
+import {TexturesResources} from "./TexturesResources";
 import {injectable} from "inversify";
 
 @injectable()
 export class ResourceLoader {
   public init(renderer: WebGLRenderer): void {
-    ResourcesLoader.initKTX2Loader(renderer)
+    ThreeJSLoaderWrapper.initKTX2Loader(renderer)
   }
 
   public async load(modelsPath: string, texturesPath: string): Promise<void> {
-    const loader = ResourcesLoader.getInstance()
+    const loader = ThreeJSLoaderWrapper.getInstance()
     await this.loadModelResources(loader, modelsPath)
     await this.loadTextureResources(loader, texturesPath)
   }
 
   private async loadModelResources(
-    loader: ResourcesLoader,
+    loader: ThreeJSLoaderWrapper,
     archivePath: string,
   ) {
     const extractor = new ArchiveExtractor(archivePath)
@@ -41,7 +41,7 @@ export class ResourceLoader {
   }
 
   private async loadTextureResources(
-    loader: ResourcesLoader,
+    loader: ThreeJSLoaderWrapper,
     archivePath: string,
   ) {
     const extractor = new ArchiveExtractor(archivePath)
@@ -55,7 +55,7 @@ export class ResourceLoader {
         if (isKtx2) {
           const texture = await new Promise<CompressedTexture>((resolve, reject) => {
             // @ts-expect-error Тип не определен
-            ResourcesLoader._ktx2Loader.parse(fileContent.buffer, resolve, reject)
+            ThreeJSLoaderWrapper._ktx2Loader.parse(fileContent.buffer, resolve, reject)
           })
           TexturesResources.set(file.split('.')[0], texture)
         } else {

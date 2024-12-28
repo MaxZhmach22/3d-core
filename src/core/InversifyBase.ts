@@ -10,16 +10,15 @@ import {ResourceLoader} from "./loading/ResourceLoader";
 /**
  * Build base DI module with base three.js objects and game settings from json file
  * @param canvas
- * @param gameSettingsPath
+ * @param gameConfigJSON
  */
-export function buildBaseDIModule(canvas: HTMLCanvasElement, gameSettingsPath: string = "./gameConfig.json"): AsyncContainerModule{
+export function buildBaseDIModule(canvas: HTMLCanvasElement, gameConfigJSON: any): AsyncContainerModule{
     return new AsyncContainerModule(async (bind) => {
-        const gameConfig = await getData(gameSettingsPath);
-
-        const baseOpt: IBaseOpt = gameConfig.baseOpt;
+;
+        const baseOpt: IBaseOpt = gameConfigJSON.baseOpt;
         bind<IBaseOpt>(BASETYPES.BaseOpt).toConstantValue(baseOpt);
 
-        const commonDebugOpt: ICommonDebugOpt = gameConfig.commonDebugOpt;
+        const commonDebugOpt: ICommonDebugOpt = gameConfigJSON.commonDebugOpt;
         bind<ICommonDebugOpt>(BASETYPES.CommonDebugOpt).toConstantValue(commonDebugOpt);
 
         const passedTime = { value: 0 }
@@ -62,7 +61,7 @@ export function buildBaseDIModule(canvas: HTMLCanvasElement, gameSettingsPath: s
     })
 }
 
-async function getData(url: string){
+export async function getConfigJSON(url: string){
     try {
         const response = await fetch(url);
         if (!response.ok) {

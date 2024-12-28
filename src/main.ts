@@ -1,5 +1,5 @@
 // Base DI
-export { buildBaseDIModule } from './core/InversifyBase'
+export { buildBaseDIModule, getConfigJSON } from './core/InversifyBase'
 
 // abstract classes
 export { BaseUpdateHandler } from './core/abstract/BaseUpdateHandler'
@@ -10,6 +10,13 @@ export type { IUpdate } from './core/interfaces/base/IUpdate'
 export type { IUpdateHandler } from './core/interfaces/base/IUpdateHandler'
 export type { IInit } from './core/interfaces/base/IInit'
 export type { IReset } from './core/interfaces/base/IReset'
+
+// loaders
+export { ArchiveExtractor } from './core/loading/ArchiveExtractor'
+export { ModelsResources } from './core/loading/ModelsResources'
+export { ResourceLoader } from './core/loading/ResourceLoader'
+export { TexturesResources } from './core/loading/TexturesResources'
+export { ThreeJSLoaderWrapper } from './core/loading/ThreeJSLoaderWrapper'
 
 // options interfaces
 export type { IBaseOpt } from './core/interfaces/options/IBaseOpt'
