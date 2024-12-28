@@ -7,10 +7,14 @@ export declare abstract class BaseUpdateHandler implements IUpdateHandler {
     protected readonly threeJSBase: IThreeJsBase;
     protected readonly commonDebugOpt: ICommonDebugOpt;
     protected readonly updatables: IUpdate[];
-    protected allPassedTime: number;
+    protected readonly allPassedTime: {
+        value: number;
+    };
     protected deltaTime: number;
     protected clock: Clock;
-    constructor(threeJSBase: IThreeJsBase, commonDebugOpt: ICommonDebugOpt, updatables: IUpdate[], allPassedTime?: number);
+    constructor(threeJSBase: IThreeJsBase, commonDebugOpt: ICommonDebugOpt, updatables: IUpdate[], allPassedTime: {
+        value: number;
+    });
     get getDeltaTime(): number;
     handleUpdate(): void;
     abstract reset(): void;

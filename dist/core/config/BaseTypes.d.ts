@@ -8,4 +8,5 @@ export declare const BASETYPES: {
     LoaderUpdate: symbol;
     LoaderReset: symbol;
     GUI: symbol;
+    PassedTime: symbol;
 };

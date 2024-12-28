@@ -20,6 +20,9 @@ export function buildBaseDIModule(canvas: HTMLCanvasElement, gameSettingsPath: s
         const commonDebugOpt: ICommonDebugOpt = gameConfig.commonDebugOpt;
         bind<ICommonDebugOpt>(BASETYPES.CommonDebugOpt).toConstantValue(commonDebugOpt);
 
+        const passedTime = { value: 0 }
+        bind<{value: number}>(BASETYPES.PassedTime).toConstantValue(passedTime);
+
         const renderer = new WebGLRenderer({
             canvas: canvas,
             antialias: baseOpt.antialias,

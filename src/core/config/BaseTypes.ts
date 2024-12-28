@@ -10,4 +10,5 @@ export const BASETYPES = {
     LoaderUpdate: Symbol.for('LoaderUpdate'),
     LoaderReset: Symbol.for('LoaderReset'),
     GUI: Symbol.for('GUI'),
+    PassedTime: Symbol.for('PassedTime'),
 }
