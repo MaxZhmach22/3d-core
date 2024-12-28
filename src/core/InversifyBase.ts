@@ -4,6 +4,7 @@ import {IBaseOpt} from "./interfaces/options/IBaseOpt";
 import {ColorSpace, PerspectiveCamera, Scene, WebGLRenderer} from "three";
 import {IThreeJsBase} from "./interfaces/base/IThreeJsBase";
 import {ICommonDebugOpt} from "./interfaces/options/ICommonDebugOpt";
+import GUI from "lil-gui";
 
 /**
  * Build base DI module with base three.js objects and game settings from json file
@@ -33,17 +34,26 @@ export function buildBaseDIModule(canvas: HTMLCanvasElement, gameSettingsPath: s
         renderer.outputColorSpace = baseOpt.colorSpace as ColorSpace
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
+        const camera = new PerspectiveCamera(
+            baseOpt.camera.fov,
+            window.innerWidth / window.innerHeight,
+            baseOpt.camera.near,
+            baseOpt.camera.far)
+
+        camera.position.copy(baseOpt.camera.position)
+
         const threeJsBase: IThreeJsBase = {
             renderer: renderer,
             scene: new Scene(),
-            camera: new PerspectiveCamera(
-                baseOpt.camera.fov,
-                window.innerWidth / window.innerHeight,
-                baseOpt.camera.near,
-                baseOpt.camera.far),
+            camera: camera,
         }
 
         bind<IThreeJsBase>(BASETYPES.ThreeJsBase).toConstantValue(threeJsBase);
+
+        const gui = new GUI({ title: 'Debug', width: 300 })
+        bind<GUI>(BASETYPES.GUI).toConstantValue(gui)
+
+        gui.addFolder('Performance')
     })
 }
 

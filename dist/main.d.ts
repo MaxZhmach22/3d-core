@@ -3,6 +3,8 @@ export { BaseUpdateHandler } from './core/abstract/BaseUpdateHandler';
 export type { IThreeJsBase } from './core/interfaces/base/IThreeJsBase';
 export type { IUpdate } from './core/interfaces/base/IUpdate';
 export type { IUpdateHandler } from './core/interfaces/base/IUpdateHandler';
+export type { IInit } from './core/interfaces/base/IInit';
+export type { IReset } from './core/interfaces/base/IReset';
 export type { IBaseOpt } from './core/interfaces/options/IBaseOpt';
 export type { ICommonDebugOpt } from './core/interfaces/options/ICommonDebugOpt';
 export { BASETYPES } from './core/config/BaseTypes';

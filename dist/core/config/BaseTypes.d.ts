@@ -5,6 +5,8 @@ export declare const BASETYPES: {
     LoadUpdateHandler: symbol;
     UpdateHandler: symbol;
     Update: symbol;
+    Init: symbol;
+    Reset: symbol;
     LoaderUpdate: symbol;
     LoaderReset: symbol;
     GUI: symbol;

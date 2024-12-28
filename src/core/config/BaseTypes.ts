@@ -7,6 +7,8 @@ export const BASETYPES = {
     LoadUpdateHandler: Symbol.for('LoadUpdateHandler'),
     UpdateHandler: Symbol.for('UpdateHandler'),
     Update: Symbol.for('Update'),
+    Init: Symbol.for('Init'),
+    Reset: Symbol.for('Reset'),
     LoaderUpdate: Symbol.for('LoaderUpdate'),
     LoaderReset: Symbol.for('LoaderReset'),
     GUI: Symbol.for('GUI'),
