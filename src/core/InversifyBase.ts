@@ -5,6 +5,7 @@ import {ColorSpace, PerspectiveCamera, Scene, WebGLRenderer} from "three";
 import {IThreeJsBase} from "./interfaces/base/IThreeJsBase";
 import {ICommonDebugOpt} from "./interfaces/options/ICommonDebugOpt";
 import GUI from "lil-gui";
+import {ResourceLoader} from "./loading/ResourceLoader";
 
 /**
  * Build base DI module with base three.js objects and game settings from json file
@@ -49,6 +50,10 @@ export function buildBaseDIModule(canvas: HTMLCanvasElement, gameSettingsPath: s
         }
 
         bind<IThreeJsBase>(BASETYPES.ThreeJsBase).toConstantValue(threeJsBase);
+
+        const resourceLoader = new ResourceLoader();
+        resourceLoader.init(renderer);
+        bind<ResourceLoader>(BASETYPES.ResourceLoader).toConstantValue(resourceLoader);
 
         const gui = new GUI({ title: 'Debug', width: 300 })
         bind<GUI>(BASETYPES.GUI).toConstantValue(gui)
