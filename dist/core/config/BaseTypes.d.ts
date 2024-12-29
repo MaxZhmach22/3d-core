@@ -5,8 +5,11 @@ export declare const BASETYPES: {
     ResourceLoader: symbol;
     UpdateHandler: symbol;
     Update: symbol;
+    UpdatableItems: symbol;
     Init: symbol;
+    InitItems: symbol;
     Reset: symbol;
+    ResetItems: symbol;
     GUI: symbol;
     PassedTime: symbol;
 };
