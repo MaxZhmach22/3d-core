@@ -7,7 +7,9 @@ import {IThreeJsBase} from "../interfaces/base/IThreeJsBase";
 import gsap from "gsap";
 import GUI, {Controller} from "lil-gui";
 import {findGUIFolder} from "../core-utils/utils";
+import {injectable} from "inversify";
 
+@injectable()
 export abstract class BaseUpdateHandler implements IUpdateHandler {
     protected deltaTime: number = 0
     protected clock = new Clock()
