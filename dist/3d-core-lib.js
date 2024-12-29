@@ -3241,8 +3241,8 @@ const _ = class _ {
   static getInstance() {
     return _._instance === null && (_._instance = new _(), _._gltfLoader.setDRACOLoader(_._dracoLoader), _._dracoLoader.setDecoderPath(`${_._base}draco/`), _._ktx2Loader.setTranscoderPath(`${_._base}basis/`)), _._instance;
   }
-  static initKTX2Loader(A) {
-    _._ktx2Loader.detectSupport(A);
+  static initKTX2Loader(A, e) {
+    _._ktx2Loader.detectSupport(A), _._base = e;
   }
   get loaderManager() {
     return _._loaderManager;
@@ -3265,8 +3265,7 @@ const _ = class _ {
     return _._gltfLoader.parseAsync(A, e);
   }
 };
-j(_, "_instance", null), j(_, "_loaderManager", new As()), j(_, "_dracoLoader", new ys(_._loaderManager)), j(_, "_gltfLoader", new Rs(_._loaderManager)), j(_, "_ktx2Loader", new EA(_._loaderManager)), j(_, "_imageLoader", new ft(_._loaderManager)), // @ts-ignore
-j(_, "_base", "/");
+j(_, "_instance", null), j(_, "_loaderManager", new As()), j(_, "_dracoLoader", new ys(_._loaderManager)), j(_, "_gltfLoader", new Rs(_._loaderManager)), j(_, "_ktx2Loader", new EA(_._loaderManager)), j(_, "_imageLoader", new ft(_._loaderManager)), j(_, "_base", "");
 let XA = _;
 var nA = Uint8Array, _A = Uint16Array, oi = Int32Array, Ht = new nA([
   0,
@@ -3615,8 +3614,8 @@ var Si = Object.defineProperty, Fi = Object.getOwnPropertyDescriptor, Ti = (r, A
   return n && t && Si(A, e, t), t;
 };
 let Ge = class {
-  init(r) {
-    XA.initKTX2Loader(r);
+  init(r, A) {
+    XA.initKTX2Loader(r, A);
   }
   async load(r, A) {
     const e = XA.getInstance();
@@ -3660,37 +3659,37 @@ let Ge = class {
 Ge = Ti([
   Bs()
 ], Ge);
-function xi(r, A) {
-  return new Is(async (e) => {
-    const n = A.baseOpt;
-    e(LA.BaseOpt).toConstantValue(n);
-    const t = A.commonDebugOpt;
-    e(LA.CommonDebugOpt).toConstantValue(t);
-    const s = { value: 0 };
-    e(LA.PassedTime).toConstantValue(s);
-    const i = new es({
+function xi(r, A, e) {
+  return new Is(async (n) => {
+    const t = e.baseOpt;
+    n(LA.BaseOpt).toConstantValue(t);
+    const s = e.commonDebugOpt;
+    n(LA.CommonDebugOpt).toConstantValue(s);
+    const i = { value: 0 };
+    n(LA.PassedTime).toConstantValue(i);
+    const o = new es({
       canvas: r,
-      antialias: n.antialias,
+      antialias: t.antialias,
       powerPreference: "high-performance"
     });
-    i.setSize(window.innerWidth, window.innerHeight), i.outputColorSpace = n.colorSpace, i.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    const o = new dt(
-      n.camera.fov,
+    o.setSize(window.innerWidth, window.innerHeight), o.outputColorSpace = t.colorSpace, o.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const a = new dt(
+      t.camera.fov,
       window.innerWidth / window.innerHeight,
-      n.camera.near,
-      n.camera.far
+      t.camera.near,
+      t.camera.far
     );
-    o.position.copy(n.camera.position);
-    const a = {
-      renderer: i,
+    a.position.copy(t.camera.position);
+    const g = {
+      renderer: o,
       scene: new ts(),
-      camera: o
+      camera: a
     };
-    e(LA.ThreeJsBase).toConstantValue(a);
-    const g = new Ge();
-    g.init(i), e(LA.ResourceLoader).toConstantValue(g);
-    const B = new is({ title: "Debug", width: 300 });
-    e(LA.GUI).toConstantValue(B), B.addFolder("Performance");
+    n(LA.ThreeJsBase).toConstantValue(g);
+    const B = new Ge();
+    B.init(o, A), n(LA.ResourceLoader).toConstantValue(B);
+    const I = new is({ title: "Debug", width: 300 });
+    n(LA.GUI).toConstantValue(I), I.addFolder("Performance");
   });
 }
 async function Ui(r) {

@@ -7,8 +7,8 @@ import {injectable} from "inversify";
 
 @injectable()
 export class ResourceLoader {
-  public init(renderer: WebGLRenderer): void {
-    ThreeJSLoaderWrapper.initKTX2Loader(renderer)
+  public init(renderer: WebGLRenderer, basePath: string): void {
+    ThreeJSLoaderWrapper.initKTX2Loader(renderer, basePath)
   }
 
   public async load(modelsPath: string, texturesPath: string): Promise<void> {

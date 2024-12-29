@@ -10,9 +10,10 @@ import {ResourceLoader} from "./loading/ResourceLoader";
 /**
  * Build base DI module with base three.js objects and game settings from json file
  * @param canvas
+ * @param basePath
  * @param gameConfigJSON
  */
-export function buildBaseDIModule(canvas: HTMLCanvasElement, gameConfigJSON: any): AsyncContainerModule{
+export function buildBaseDIModule(canvas: HTMLCanvasElement, basePath: string, gameConfigJSON: any): AsyncContainerModule{
     return new AsyncContainerModule(async (bind) => {
 ;
         const baseOpt: IBaseOpt = gameConfigJSON.baseOpt;
@@ -51,7 +52,7 @@ export function buildBaseDIModule(canvas: HTMLCanvasElement, gameConfigJSON: any
         bind<IThreeJsBase>(BASETYPES.ThreeJsBase).toConstantValue(threeJsBase);
 
         const resourceLoader = new ResourceLoader();
-        resourceLoader.init(renderer);
+        resourceLoader.init(renderer, basePath);
         bind<ResourceLoader>(BASETYPES.ResourceLoader).toConstantValue(resourceLoader);
 
         const gui = new GUI({ title: 'Debug', width: 300 })

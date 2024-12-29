@@ -8,9 +8,9 @@ export declare class ThreeJSLoaderWrapper {
     private static readonly _gltfLoader;
     static readonly _ktx2Loader: KTX2Loader;
     private static readonly _imageLoader;
-    private static readonly _base;
+    private static _base;
     static getInstance(): ThreeJSLoaderWrapper;
-    static initKTX2Loader(renderer: WebGLRenderer): void;
+    static initKTX2Loader(renderer: WebGLRenderer, base: string): void;
     get loaderManager(): LoadingManager;
     loadTexture(url: string, includeBase?: boolean): Promise<Texture>;
     loadGPUTexture(url: string): Promise<Texture>;

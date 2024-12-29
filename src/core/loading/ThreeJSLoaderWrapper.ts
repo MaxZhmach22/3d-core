@@ -16,8 +16,7 @@ export class ThreeJSLoaderWrapper {
 
   private static readonly _imageLoader = new TextureLoader(ThreeJSLoaderWrapper._loaderManager)
 
-  // @ts-ignore
-  private static readonly _base = import.meta.env.BASE_URL
+  private static  _base = ''
 
   static getInstance(): ThreeJSLoaderWrapper {
     if (ThreeJSLoaderWrapper._instance === null) {
@@ -29,8 +28,9 @@ export class ThreeJSLoaderWrapper {
     return ThreeJSLoaderWrapper._instance
   }
 
-  public static initKTX2Loader(renderer: WebGLRenderer) {
+  public static initKTX2Loader(renderer: WebGLRenderer, base: string) {
     ThreeJSLoaderWrapper._ktx2Loader.detectSupport(renderer)
+    ThreeJSLoaderWrapper._base = base
   }
 
   get loaderManager(): LoadingManager {
