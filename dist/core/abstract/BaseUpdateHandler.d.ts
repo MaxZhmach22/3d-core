@@ -4,6 +4,7 @@ import { ICommonDebugOpt } from '../interfaces/options/ICommonDebugOpt';
 import { IUpdate } from '../interfaces/base/IUpdate';
 import { IThreeJsBase } from '../interfaces/base/IThreeJsBase';
 import { default as GUI, Controller } from 'lil-gui';
+import { ThreePerf } from 'three-perf';
 export declare abstract class BaseUpdateHandler implements IUpdateHandler {
     protected readonly threeJSBase: IThreeJsBase;
     protected readonly commonDebugOpt: ICommonDebugOpt;
@@ -12,15 +13,19 @@ export declare abstract class BaseUpdateHandler implements IUpdateHandler {
         value: number;
     };
     protected readonly gui: GUI;
+    protected readonly IS_PROD: boolean;
     protected deltaTime: number;
     protected clock: Clock;
-    protected performanceFolderController: Controller;
+    protected timeScaleController: Controller;
+    protected perf: ThreePerf | null;
+    protected perfomanceFolder: GUI;
     constructor(threeJSBase: IThreeJsBase, commonDebugOpt: ICommonDebugOpt, updatables: IUpdate[], allPassedTime: {
         value: number;
-    }, gui: GUI);
+    }, gui: GUI, IS_PROD: boolean);
     get getDeltaTime(): number;
     handleUpdate(): void;
-    addDebugGUI(): Controller;
+    addDebugGUI(folder: GUI): Controller[];
+    protected changeSpeed(event: KeyboardEvent): void;
     abstract reset(): void;
     abstract initUpdateLoop(): void;
 }
