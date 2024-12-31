@@ -19,6 +19,7 @@ export declare abstract class BaseUpdateHandler implements IUpdateHandler {
     protected timeScaleController: Controller;
     protected perf: ThreePerf | null;
     protected perfomanceFolder: GUI;
+    protected isPerfEnabled: boolean;
     constructor(threeJSBase: IThreeJsBase, commonDebugOpt: ICommonDebugOpt, updatables: IUpdate[], allPassedTime: {
         value: number;
     }, gui: GUI, IS_PROD: boolean);

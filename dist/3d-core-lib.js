@@ -1,6 +1,6 @@
 var Nc = Object.defineProperty;
 var Oc = (p, n, A) => n in p ? Nc(p, n, { enumerable: !0, configurable: !0, writable: !0, value: A }) : p[n] = A;
-var it = (p, n, A) => Oc(p, typeof n != "symbol" ? n + "" : n, A);
+var tt = (p, n, A) => Oc(p, typeof n != "symbol" ? n + "" : n, A);
 import { Loader as Gs, FileLoader as Nn, CompressedCubeTexture as Vc, UnsignedByteType as xt, CompressedArrayTexture as Hc, CompressedTexture as xa, LinearFilter as hr, LinearMipmapLinearFilter as Ns, RGBAFormat as or, RGBA_ASTC_4x4_Format as Sa, RGBA_BPTC_Format as Kc, RGBA_ETC2_EAC_Format as qc, RGBA_PVRTC_4BPPV1_Format as Yc, RGBA_S3TC_DXT5_Format as Jc, RGB_ETC1_Format as jc, RGB_ETC2_Format as Wc, RGB_PVRTC_4BPPV1_Format as Xc, RGBA_S3TC_DXT1_Format as zc, FloatType as wi, HalfFloatType as Gr, DataTexture as Zc, Data3DTexture as $c, SRGBColorSpace as tn, LinearSRGBColorSpace as kt, DisplayP3ColorSpace as eu, LinearDisplayP3ColorSpace as tu, NoColorSpace as Oo, RGFormat as Nr, RedFormat as Or, RGBA_ASTC_6x6_Format as Vo, BufferGeometry as cr, BufferAttribute as In, Color as Dt, ColorManagement as Bs, TrianglesDrawMode as nu, TriangleFanDrawMode as _s, TriangleStripDrawMode as ka, LoaderUtils as Hr, SpotLight as ru, PointLight as iu, DirectionalLight as su, MeshBasicMaterial as ar, MeshPhysicalMaterial as Ht, Vector2 as Vn, Matrix4 as jr, Vector3 as en, Quaternion as Da, InstancedMesh as ou, InstancedBufferAttribute as Ta, Object3D as Wr, TextureLoader as Ra, ImageBitmapLoader as au, InterleavedBuffer as Au, InterleavedBufferAttribute as lu, RepeatWrapping as ys, PointsMaterial as cu, Material as ns, LineBasicMaterial as bi, MeshStandardMaterial as Fa, DoubleSide as Os, PropertyBinding as uu, SkinnedMesh as hu, Mesh as Qi, LineSegments as du, Line as Bi, LineLoop as pu, Points as fu, Group as rs, PerspectiveCamera as La, MathUtils as Pa, OrthographicCamera as Ma, Skeleton as gu, AnimationClip as mu, Bone as vu, InterpolateLinear as Ua, NearestFilter as Cu, NearestMipmapNearestFilter as Iu, LinearMipmapNearestFilter as Eu, NearestMipmapLinearFilter as wu, ClampToEdgeWrapping as bu, MirroredRepeatWrapping as Bu, InterpolateDiscrete as _u, FrontSide as Ga, Texture as Qs, VectorKeyframeTrack as Ho, NumberKeyframeTrack as Ko, QuaternionKeyframeTrack as qo, Box3 as Na, Sphere as Oa, Interpolant as yu, LoadingManager as Qu, WebGLRenderer as Va, Scene as Ha, Euler as xu, UniformsUtils as Su, MeshDepthMaterial as ku, RGBADepthPacking as Du, MeshDistanceMaterial as Tu, ShaderChunk as Ru, InstancedBufferGeometry as Fu, BackSide as Lu, Vector4 as Yo, Matrix3 as Pu, PlaneGeometry as Vs, Float32BufferAttribute as Mu, DynamicDrawUsage as is, Clock as Uu } from "three";
 import Gu from "lil-gui";
 import ss from "gsap";
@@ -541,10 +541,10 @@ function Nu() {
           if (P(ke))
             return fe;
           for (var Le = ke.keys(), Me = se(Le), Ue = 0; ; ) {
-            var tt = me(Me);
-            if (!tt)
+            var nt = me(Me);
+            if (!nt)
               return fe.length = Ue, fe;
-            var Je = Ie(tt);
+            var Je = Ie(nt);
             try {
               fe[Ue] = Je;
             } catch (He) {
@@ -837,8 +837,8 @@ var Zo;
 })(Zo || (Zo = {}));
 class Ku {
   constructor(n) {
-    it(this, "id");
-    it(this, "registry");
+    tt(this, "id");
+    tt(this, "registry");
     this.id = Hu(), this.registry = n;
   }
 }
@@ -3268,7 +3268,7 @@ const Oe = class Oe {
     return Oe._gltfLoader.parseAsync(n, A);
   }
 };
-it(Oe, "_instance", null), it(Oe, "_loaderManager", new Qu()), it(Oe, "_dracoLoader", new rh(Oe._loaderManager)), it(Oe, "_gltfLoader", new sh(Oe._loaderManager)), it(Oe, "_ktx2Loader", new Vt(Oe._loaderManager)), it(Oe, "_imageLoader", new Ra(Oe._loaderManager)), it(Oe, "_base", "");
+tt(Oe, "_instance", null), tt(Oe, "_loaderManager", new Qu()), tt(Oe, "_dracoLoader", new rh(Oe._loaderManager)), tt(Oe, "_gltfLoader", new sh(Oe._loaderManager)), tt(Oe, "_ktx2Loader", new Vt(Oe._loaderManager)), tt(Oe, "_imageLoader", new Ra(Oe._loaderManager)), tt(Oe, "_base", "");
 let Kr = Oe;
 var It = Uint8Array, Ar = Uint16Array, Nh = Int32Array, lA = new It([
   0,
@@ -3581,7 +3581,7 @@ function id(p, n) {
 }
 class Aa {
   constructor(n) {
-    it(this, "_files", {});
+    tt(this, "_files", {});
     this.archiveUrl = n;
   }
   get files() {
@@ -3720,7 +3720,7 @@ const Gn = class Gn {
     });
   }
 };
-it(Gn, "_idCounter", 0), it(Gn, "resolvers", /* @__PURE__ */ new Map());
+tt(Gn, "_idCounter", 0), tt(Gn, "resolvers", /* @__PURE__ */ new Map());
 let Fs = Gn;
 function ld(p, n) {
   const A = p.folders.find((u) => u._title === n);
@@ -4580,7 +4580,7 @@ function ud() {
           });
         }
       }
-      class tt extends k {
+      class nt extends k {
         constructor(e, r) {
           super(e, r), this.binding = r.binding;
         }
@@ -4621,7 +4621,7 @@ function ud() {
       function ft(s) {
         return s instanceof Ze ? s.apiSet_ : s instanceof Ae ? s.rackApi_.apiSet_ : null;
       }
-      function nt(s, e) {
+      function rt(s, e) {
         const r = s.find((c) => c.controller_ === e);
         if (!r)
           throw C.shouldNeverHappen();
@@ -4641,7 +4641,7 @@ function ud() {
           });
         }
         get children() {
-          return this.controller_.rack.children.map((e) => nt(this.apiSet_, e));
+          return this.controller_.rack.children.map((e) => rt(this.apiSet_, e));
         }
         addInput(e, r, c) {
           const g = c ?? {}, w = this.controller_.view.element.ownerDocument, D = this.pool_.createInput(w, Ye(e, r, g.presetKey), g), ne = new Ue(D);
@@ -4689,19 +4689,19 @@ function ud() {
         }
         onRackRemove_(e) {
           if (e.isRoot) {
-            const r = nt(this.apiSet_, e.bladeController);
+            const r = rt(this.apiSet_, e.bladeController);
             this.apiSet_.remove(r);
           }
         }
         onRackInputChange_(e) {
           const r = e.bladeController;
-          if (r instanceof tt) {
-            const c = nt(this.apiSet_, r), g = r.binding;
+          if (r instanceof nt) {
+            const c = rt(this.apiSet_, r), g = r.binding;
             this.emitter_.emit("change", {
               event: new o(c, g.target.read(), g.target.presetKey, e.options.last)
             });
           } else if (r instanceof U) {
-            const c = nt(this.apiSet_, r);
+            const c = rt(this.apiSet_, r);
             this.emitter_.emit("change", {
               event: new o(c, r.value.rawValue, void 0, e.options.last)
             });
@@ -4710,7 +4710,7 @@ function ud() {
         onRackMonitorUpdate_(e) {
           if (!(e.bladeController instanceof He))
             throw C.shouldNeverHappen();
-          const r = nt(this.apiSet_, e.bladeController), c = e.bladeController.binding;
+          const r = rt(this.apiSet_, e.bladeController), c = e.bladeController.binding;
           this.emitter_.emit("update", {
             event: new l(r, c.target.read(), c.target.presetKey)
           });
@@ -4799,7 +4799,7 @@ function ud() {
       function st(s, e) {
         for (let r = 0; r < s.length; r++) {
           const c = s[r];
-          if (c instanceof tt && c.binding === e)
+          if (c instanceof nt && c.binding === e)
             return c;
         }
         return null;
@@ -4864,7 +4864,7 @@ function ud() {
           }), !r)
             return;
           const c = e.item;
-          if (c.viewProps.emitter.on("change", this.onChildViewPropsChange_), c.blade.value("positions").emitter.on("change", this.onChildPositionsChange_), c.viewProps.handleDispose(this.onChildDispose_), c instanceof tt)
+          if (c.viewProps.emitter.on("change", this.onChildViewPropsChange_), c.blade.value("positions").emitter.on("change", this.onChildPositionsChange_), c.viewProps.handleDispose(this.onChildDispose_), c instanceof nt)
             c.binding.emitter.on("change", this.onChildInputChange_);
           else if (c instanceof He)
             c.binding.emitter.on("update", this.onChildMonitorUpdate_);
@@ -4888,7 +4888,7 @@ function ud() {
           }), !r)
             return;
           const c = e.item;
-          if (c instanceof tt)
+          if (c instanceof nt)
             c.binding.emitter.off("change", this.onChildInputChange_);
           else if (c instanceof He)
             c.binding.emitter.off("update", this.onChildMonitorUpdate_);
@@ -4925,7 +4925,7 @@ function ud() {
           });
         }
         onChildInputChange_(e) {
-          const r = st(this.find(tt), e.sender);
+          const r = st(this.find(nt), e.sender);
           if (!r)
             throw C.alreadyDisposed();
           this.emitter.emit("inputchange", {
@@ -6109,7 +6109,7 @@ function ud() {
       function Ws(s) {
         return String(s.toFixed(10)).split(".")[1].replace(/0+$/, "").length;
       }
-      function rt(s, e, r) {
+      function it(s, e, r) {
         return Math.min(Math.max(s, e), r);
       }
       function Xs(s, e) {
@@ -6138,7 +6138,7 @@ function ud() {
             return;
           }
           this.element.classList.add(Et(void 0, "drg"));
-          const r = e.rawValue / this.props_.get("draggingScale"), c = r + (r > 0 ? -1 : r < 0 ? 1 : 0), g = rt(-c, -4, 4);
+          const r = e.rawValue / this.props_.get("draggingScale"), c = r + (r > 0 ? -1 : r < 0 ? 1 : 0), g = it(-c, -4, 4);
           this.guideHeadElem_.setAttributeNS(null, "d", [`M ${c + g},0 L${c},4 L${c + g},8`, `M ${r},-1 L${r},9`].join(" ")), this.guideBodyElem_.setAttributeNS(null, "d", `M 0,4 L${r},4`);
           const w = this.props_.get("formatter");
           this.tooltipElem_.textContent = w(this.value.rawValue), this.tooltipElem_.style.left = `${r}px`;
@@ -6221,7 +6221,7 @@ function ud() {
           g.classList.add(Pi("k")), this.trackElement.appendChild(g), this.knobElement = g, r.value.emitter.on("change", this.onChange_), this.value = r.value, this.update_();
         }
         update_() {
-          const e = rt(ze(this.value.rawValue, this.props_.get("minValue"), this.props_.get("maxValue"), 0, 100), 0, 100);
+          const e = it(ze(this.value.rawValue, this.props_.get("minValue"), this.props_.get("maxValue"), 0, 100), 0, 100);
           this.knobElement.style.width = `${e}%`;
         }
         onChange_() {
@@ -6237,7 +6237,7 @@ function ud() {
           }), this.ptHandler_ = new Dn(this.view.trackElement), this.ptHandler_.emitter.on("down", this.onPointerDownOrMove_), this.ptHandler_.emitter.on("move", this.onPointerDownOrMove_), this.ptHandler_.emitter.on("up", this.onPointerUp_), this.view.trackElement.addEventListener("keydown", this.onKeyDown_), this.view.trackElement.addEventListener("keyup", this.onKeyUp_);
         }
         handlePointerEvent_(e, r) {
-          e.point && this.value.setRawValue(ze(rt(e.point.x, 0, e.bounds.width), 0, e.bounds.width, this.props.get("minValue"), this.props.get("maxValue")), r);
+          e.point && this.value.setRawValue(ze(it(e.point.x, 0, e.bounds.width), 0, e.bounds.width, this.props.get("minValue"), this.props.get("maxValue")), r);
         }
         onPointerDownOrMove_(e) {
           this.handlePointerEvent_(e.data, {
@@ -6439,25 +6439,25 @@ function ud() {
         }
       }
       function GA(s, e, r) {
-        const c = rt(s / 255, 0, 1), g = rt(e / 255, 0, 1), w = rt(r / 255, 0, 1), D = Math.max(c, g, w), ne = Math.min(c, g, w), ye = D - ne;
+        const c = it(s / 255, 0, 1), g = it(e / 255, 0, 1), w = it(r / 255, 0, 1), D = Math.max(c, g, w), ne = Math.min(c, g, w), ye = D - ne;
         let Se = 0, Ke = 0;
         const qe = (ne + D) / 2;
         return ye !== 0 && (Ke = ye / (1 - Math.abs(D + ne - 1)), c === D ? Se = (g - w) / ye : g === D ? Se = 2 + (w - c) / ye : Se = 4 + (c - g) / ye, Se = Se / 6 + (Se < 0 ? 1 : 0)), [Se * 360, Ke * 100, qe * 100];
       }
       function NA(s, e, r) {
-        const c = (s % 360 + 360) % 360, g = rt(e / 100, 0, 1), w = rt(r / 100, 0, 1), D = (1 - Math.abs(2 * w - 1)) * g, ne = D * (1 - Math.abs(c / 60 % 2 - 1)), ye = w - D / 2;
+        const c = (s % 360 + 360) % 360, g = it(e / 100, 0, 1), w = it(r / 100, 0, 1), D = (1 - Math.abs(2 * w - 1)) * g, ne = D * (1 - Math.abs(c / 60 % 2 - 1)), ye = w - D / 2;
         let Se, Ke, qe;
         return c >= 0 && c < 60 ? [Se, Ke, qe] = [D, ne, 0] : c >= 60 && c < 120 ? [Se, Ke, qe] = [ne, D, 0] : c >= 120 && c < 180 ? [Se, Ke, qe] = [0, D, ne] : c >= 180 && c < 240 ? [Se, Ke, qe] = [0, ne, D] : c >= 240 && c < 300 ? [Se, Ke, qe] = [ne, 0, D] : [Se, Ke, qe] = [D, 0, ne], [(Se + ye) * 255, (Ke + ye) * 255, (qe + ye) * 255];
       }
       function OA(s, e, r) {
-        const c = rt(s / 255, 0, 1), g = rt(e / 255, 0, 1), w = rt(r / 255, 0, 1), D = Math.max(c, g, w), ne = Math.min(c, g, w), ye = D - ne;
+        const c = it(s / 255, 0, 1), g = it(e / 255, 0, 1), w = it(r / 255, 0, 1), D = Math.max(c, g, w), ne = Math.min(c, g, w), ye = D - ne;
         let Se;
         ye === 0 ? Se = 0 : D === c ? Se = 60 * (((g - w) / ye % 6 + 6) % 6) : D === g ? Se = 60 * ((w - c) / ye + 2) : Se = 60 * ((c - g) / ye + 4);
         const Ke = D === 0 ? 0 : ye / D, qe = D;
         return [Se, Ke * 100, qe * 100];
       }
       function $s(s, e, r) {
-        const c = Xs(s, 360), g = rt(e / 100, 0, 1), w = rt(r / 100, 0, 1), D = w * g, ne = D * (1 - Math.abs(c / 60 % 2 - 1)), ye = w - D;
+        const c = Xs(s, 360), g = it(e / 100, 0, 1), w = it(r / 100, 0, 1), D = w * g, ne = D * (1 - Math.abs(c / 60 % 2 - 1)), ye = w - D;
         let Se, Ke, qe;
         return c >= 0 && c < 60 ? [Se, Ke, qe] = [D, ne, 0] : c >= 60 && c < 120 ? [Se, Ke, qe] = [ne, D, 0] : c >= 120 && c < 180 ? [Se, Ke, qe] = [0, D, ne] : c >= 180 && c < 240 ? [Se, Ke, qe] = [0, ne, D] : c >= 240 && c < 300 ? [Se, Ke, qe] = [ne, 0, D] : [Se, Ke, qe] = [D, 0, ne], [(Se + ye) * 255, (Ke + ye) * 255, (qe + ye) * 255];
       }
@@ -6510,10 +6510,10 @@ function ud() {
         var c;
         const g = gi(e, r);
         return [
-          e === "rgb" ? rt(s[0], 0, g[0]) : qA(s[0], g[0]),
-          rt(s[1], 0, g[1]),
-          rt(s[2], 0, g[2]),
-          rt((c = s[3]) !== null && c !== void 0 ? c : 1, 0, 1)
+          e === "rgb" ? it(s[0], 0, g[0]) : qA(s[0], g[0]),
+          it(s[1], 0, g[1]),
+          it(s[2], 0, g[2]),
+          it((c = s[3]) !== null && c !== void 0 ? c : 1, 0, 1)
         ];
       }
       function to(s, e, r, c) {
@@ -6900,7 +6900,7 @@ function ud() {
         return (r) => e.reduce((c, g) => c || g(r), null);
       }
       function Co(s) {
-        const e = rt(Math.floor(s), 0, 255).toString(16);
+        const e = it(Math.floor(s), 0, 255).toString(16);
         return e.length === 1 ? `0${e}` : e;
       }
       function Io(s, e = "#") {
@@ -7250,7 +7250,7 @@ function ud() {
         handlePointerEvent_(e, r) {
           if (!e.point)
             return;
-          const c = ze(rt(e.point.x, 0, e.bounds.width), 0, e.bounds.width, 0, 360), g = this.value.rawValue, [, w, D, ne] = g.getComponents("hsv");
+          const c = ze(it(e.point.x, 0, e.bounds.width), 0, e.bounds.width, 0, 360), g = this.value.rawValue, [, w, D, ne] = g.getComponents("hsv");
           this.value.setRawValue(new Ge([c, w, D, ne], "hsv"), r);
         }
         onPointerDown_(e) {
@@ -8506,7 +8506,7 @@ function ud() {
             hidden: qe
           })
         });
-        return new tt(e.document, {
+        return new nt(e.document, {
           binding: Se,
           blade: le(),
           props: j.fromObject({
@@ -8621,7 +8621,7 @@ function ud() {
           return c;
         }
         createBladeApi(e) {
-          if (e instanceof tt)
+          if (e instanceof nt)
             return new Ue(e);
           if (e instanceof He)
             return new Je(e);
@@ -8924,7 +8924,7 @@ function ud() {
          * @param preset The preset object to import.
          */
         importPreset(e) {
-          const r = this.controller_.rackController.rack.find(tt).map((c) => c.binding);
+          const r = this.controller_.rackController.rack.find(nt).map((c) => c.binding);
           Tc(r, e), this.refresh();
         }
         /**
@@ -8932,14 +8932,14 @@ function ud() {
          * @return An exported preset object.
          */
         exportPreset() {
-          const e = this.controller_.rackController.rack.find(tt).map((r) => r.binding.target);
+          const e = this.controller_.rackController.rack.find(nt).map((r) => r.binding.target);
           return Dc(e);
         }
         /**
          * Refreshes all bindings of the pane.
          */
         refresh() {
-          this.controller_.rackController.rack.find(tt).forEach((e) => {
+          this.controller_.rackController.rack.find(nt).forEach((e) => {
             e.binding.read();
           }), this.controller_.rackController.rack.find(He).forEach((e) => {
             e.binding.read();
@@ -9879,9 +9879,9 @@ function Cd() {
             ge[ce] = U._level, U._override && $ !== H && Ee(ce, U._override);
         }
         for (var Le = [], Me = null, Ue = we.start; Ue <= we.end; Ue++) {
-          var tt = ee[Ue];
-          if (!(tt & a)) {
-            var Je = ge[Ue], He = tt & t, ft = tt === z;
+          var nt = ee[Ue];
+          if (!(nt & a)) {
+            var Je = ge[Ue], He = nt & t, ft = nt === z;
             Me && Je === Me._level ? (Me._end = Ue, Me._endsWithIsolInit = He) : Le.push(Me = {
               _start: Ue,
               _end: Ue,
@@ -9891,7 +9891,7 @@ function Cd() {
             });
           }
         }
-        for (var nt = [], Ye = 0; Ye < Le.length; Ye++) {
+        for (var rt = [], Ye = 0; Ye < Le.length; Ye++) {
           var Ze = Le[Ye];
           if (!Ze._startsWithPDI || Ze._startsWithPDI && !Ve.has(Ze._start)) {
             for (var lt = [Me = Ze], $e = void 0; Me && Me._endsWithIsolInit && ($e = Ve.get(Me._end)) != null; )
@@ -9916,15 +9916,15 @@ function Cd() {
                   break;
                 }
             }
-            nt.push({
+            rt.push({
               _seqIndices: st,
               _sosType: Math.max(Zr, Si) % 2 ? L : T,
               _eosType: Math.max(Kn, ki) % 2 ? L : T
             });
           }
         }
-        for (var Ft = 0; Ft < nt.length; Ft++) {
-          var Yn = nt[Ft], be = Yn._seqIndices, En = Yn._sosType, $r = Yn._eosType, nn = ge[be[0]] & 1 ? L : T;
+        for (var Ft = 0; Ft < rt.length; Ft++) {
+          var Yn = rt[Ft], be = Yn._seqIndices, En = Yn._sosType, $r = Yn._eosType, nn = ge[be[0]] & 1 ? L : T;
           if (Ce.get(j))
             for (var Lt = 0; Lt < be.length; Lt++) {
               var ei = be[Lt];
@@ -10522,8 +10522,8 @@ function Qd(p, n, A) {
               let Je = 0;
               for (let He = 0; He < Ae; He++) {
                 let ft = ce.glyphAt(He);
-                const nt = ft.glyphObj;
-                ft.x += ke + Je, Le !== 0 && nt.isWhitespace && He < Ae - fe && (Je += Le, ft.width += Le);
+                const rt = ft.glyphObj;
+                ft.x += ke + Je, Le !== 0 && rt.isWhitespace && He < Ae - fe && (Je += Le, ft.width += Le);
               }
             }
             const Me = n.getReorderSegments(
@@ -10534,7 +10534,7 @@ function Qd(p, n, A) {
             );
             for (let Je = 0; Je < Me.length; Je++) {
               const [He, ft] = Me[Je];
-              let nt = 1 / 0, Ye = -1 / 0;
+              let rt = 1 / 0, Ye = -1 / 0;
               for (let Ze = 0; Ze < Ae; Ze++)
                 if (ce.glyphAt(Ze).charIndex >= He) {
                   let lt = Ze, $e = Ze;
@@ -10542,28 +10542,28 @@ function Qd(p, n, A) {
                     let et = ce.glyphAt($e);
                     if (et.charIndex > ft)
                       break;
-                    $e < Ae - fe && (nt = Math.min(nt, et.x), Ye = Math.max(Ye, et.x + et.width));
+                    $e < Ae - fe && (rt = Math.min(rt, et.x), Ye = Math.max(Ye, et.x + et.width));
                   }
                   for (let et = lt; et < $e; et++) {
                     const st = ce.glyphAt(et);
-                    st.x = Ye - (st.x + st.width - nt);
+                    st.x = Ye - (st.x + st.width - rt);
                   }
                   break;
                 }
             }
             let Ue;
-            const tt = (Je) => Ue = Je;
+            const nt = (Je) => Ue = Je;
             for (let Je = 0; Je < Ae; Je++) {
               let He = ce.glyphAt(Je);
               Ue = He.glyphObj;
-              const ft = Ue.index, nt = B.levels[He.charIndex] & 1;
-              if (nt) {
+              const ft = Ue.index, rt = B.levels[He.charIndex] & 1;
+              if (rt) {
                 const Ye = n.getMirroredCharacter(I[He.charIndex]);
-                Ye && P.forEachGlyph(Ye, 0, 0, tt);
+                Ye && P.forEachGlyph(Ye, 0, 0, nt);
               }
               if (ae) {
                 const { charIndex: Ye } = He, Ze = He.x + Pe, lt = He.x + He.width + Pe;
-                ue[Ye * 3] = nt ? lt : Ze, ue[Ye * 3 + 1] = nt ? Ze : lt, ue[Ye * 3 + 2] = k + Ve + je;
+                ue[Ye * 3] = rt ? lt : Ze, ue[Ye * 3 + 1] = rt ? Ze : lt, ue[Ye * 3 + 2] = k + Ve + je;
                 const $e = Ye - U;
                 $e > 1 && b(ue, U, $e), U = Ye;
               }
@@ -13284,11 +13284,12 @@ var lp = Object.defineProperty, cp = Object.getOwnPropertyDescriptor, up = (p, n
 };
 let Qa = class {
   constructor(p, n, A, u, i, t) {
-    it(this, "deltaTime", 0);
-    it(this, "clock", new Uu());
-    it(this, "timeScaleController");
-    it(this, "perf", null);
-    it(this, "perfomanceFolder");
+    tt(this, "deltaTime", 0);
+    tt(this, "clock", new Uu());
+    tt(this, "timeScaleController");
+    tt(this, "perf", null);
+    tt(this, "perfomanceFolder");
+    tt(this, "isPerfEnabled", !1);
     this.threeJSBase = p, this.commonDebugOpt = n, this.updatables = A, this.allPassedTime = u, this.gui = i, this.IS_PROD = t, ss.ticker.remove(ss.updateRoot), this.changeSpeed = this.changeSpeed.bind(this), t || (this.perf = new Ap({
       anchorY: "bottom",
       anchorX: "left",
@@ -13296,7 +13297,7 @@ let Qa = class {
       renderer: this.threeJSBase.renderer,
       memory: !0,
       enabled: this.commonDebugOpt.perfDebug
-    })), this.perfomanceFolder = ld(this.gui, "Performance"), this.timeScaleController = this.addDebugGUI(this.perfomanceFolder)[0], t || window.addEventListener("keydown", this.changeSpeed);
+    }), this.isPerfEnabled = this.commonDebugOpt.perfDebug), this.perfomanceFolder = ld(this.gui, "Performance"), this.timeScaleController = this.addDebugGUI(this.perfomanceFolder)[0], t || window.addEventListener("keydown", this.changeSpeed);
   }
   get getDeltaTime() {
     return this.deltaTime;
@@ -13310,7 +13311,7 @@ let Qa = class {
     return [
       p.add(this.commonDebugOpt, "timeScale", 0.1, 3).name("Time Scale"),
       p.add(this.commonDebugOpt, "perfDebug").name("Statistics").onChange((n) => {
-        this.perf && (this.perf.enabled = n, this.perf.visible = n);
+        this.perf && (this.perf.enabled = n, this.perf.visible = n, this.isPerfEnabled = n);
       })
     ];
   }
@@ -13328,7 +13329,7 @@ Qa = up([
 ], Qa);
 class bp {
   constructor(...n) {
-    it(this, "args");
+    tt(this, "args");
     this.args = n;
   }
 }

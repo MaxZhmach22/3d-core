@@ -17,6 +17,7 @@ export abstract class BaseUpdateHandler implements IUpdateHandler {
     protected timeScaleController: Controller
     protected perf: ThreePerf | null = null
     protected perfomanceFolder: GUI
+    protected isPerfEnabled: boolean = false
 
     constructor(
         protected readonly threeJSBase: IThreeJsBase,
@@ -38,6 +39,7 @@ export abstract class BaseUpdateHandler implements IUpdateHandler {
                 memory: true,
                 enabled: this.commonDebugOpt.perfDebug,
             })
+            this.isPerfEnabled = this.commonDebugOpt.perfDebug;
         }
 
         this.perfomanceFolder = findGUIFolder(this.gui, 'Performance')
@@ -72,6 +74,7 @@ export abstract class BaseUpdateHandler implements IUpdateHandler {
                     if (!this.perf) return
                     this.perf.enabled = value
                     this.perf.visible = value
+                    this.isPerfEnabled = value;
                 })
         ];
     }
